@@ -1,14 +1,7 @@
-const classNum = document.getElementById('classNum')
-classNum.addEventListener('keyup', e => {
+// display endpoint
+const formElement = document.querySelector('form')
+formElement.addEventListener('input', () => {
   const endpoint = document.getElementById('endpoint')
- 
-  endpoint.innerHTML = getEndpoint()
-})
-
-const select = document.querySelector('select')
-select.addEventListener('change', e => {
-  const endpoint = document.getElementById('endpoint')
-
   endpoint.innerHTML = getEndpoint()
 })
 
@@ -31,6 +24,8 @@ btnGet.addEventListener('click', async(e) => {
 
 // GET ENDPOINT
 const getEndpoint = () => {
+  const classNum = document.getElementById('classNum')
+  const select = document.querySelector('select')
   let value
 
   if(classNum.value === '' && select.value === '') return ''
