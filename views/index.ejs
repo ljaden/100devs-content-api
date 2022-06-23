@@ -1,5 +1,60 @@
 <%- include('partials/header') -%>
-<h1>100Devs</h1>
+<h1 align="center">100Devs</h1>
+
+<div class="container">
+
+  <form action="">
+    <div class="row g-3 d-flex justify-content-center">
+
+      <div class="col-auto">
+        <button type="button" class="btn btn-success" id="btn-get">GET</button>
+      </div>
+      <div class="col-2">
+        <input type="number" class="form-control" name="classNum" min="1" max="100" placeholder="Class #" id="classNum">
+      </div>
+
+      <div class="col-3">
+        <select class="form-select" aria-label="">
+          <option selected value=""></option>
+          <option value="discord">Discord</option>
+          <option value="vod">Vod</option>
+          <option value="checkin">Check in</option>
+          <option value="slides">Slides</option>
+          <option value="homework">Homework</option>
+          <option value="extra">Extra</option>
+        </select>
+      </div>
+    </div>
+
+  </form>
+
+  <div class="row justify-content-center align-items-center">
+    <div class="col-auto ">
+      <p>Endpoint:</p>
+    </div>
+    <div class="col-auto ">
+        <p id="endpoint"></p>
+    </div>
+  </div>
+
+  <div class="tabcontent" id="rawResults">
+    <div class="row">
+        <p id="raw"></p>
+    </div>
+  </div>
+
+  <div class="tabcontent" id="prettyResults">
+    <div class="row">
+      <pre id="pretty"></pre>
+    </div>
+  </div>
+
+  <div class="tab">
+    <button class="tablinks btn btn-success" onclick="toggleTabs(event,'rawResults')">Raw</button>
+    <button class="tablinks btn" onclick="toggleTabs(event,'prettyResults')">Pretty</button>
+  </div>
+
+</div>
 
 
 <%- include('partials/footer') -%>
