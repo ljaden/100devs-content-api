@@ -42,11 +42,11 @@ router.get('/api/class/:classNum/:category', (req,res) => {
   Content.findOne({"content.classNum":classNum}, `content.${category}`,(err, result) => {
     if(err) return res.sendStatus(404)
     //
-    if(result === null){
-      res.send({Error: null})
+    if(result !== null){
+      res.send(result.content[`${category}`])
     }
     //
-    res.send(result.content[`${category}`])
+    res.send({Error: null})
   })
 })
 
