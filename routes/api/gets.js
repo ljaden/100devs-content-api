@@ -39,16 +39,15 @@ router.get('/api/class/:classNum/:category', (req,res) => {
 
   const category = req.params.category
 
-  Content.findOne({"content.classNum":classNum}, `content.${category}`,(err, result) => {
-    if(err) return res.sendStatus(404)
-    //
+  Content.findOne({"content.classNum":classNum},(err, result) => {
+
     if(result !== null){
       res.send(result.content[`${category}`])
+    } else {
+      res.send({Error: null})
     }
-    //
-    res.send({Error: null})
+    
   })
 })
-
 
 module.exports = router

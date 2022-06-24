@@ -10,7 +10,6 @@ const btnGet = document.getElementById('btn-get')
 btnGet.addEventListener('click', async(e) => {
   // results
   let data = await getResults()
-  // console.log(JSON.stringify(data))
   
   // output raw results
   const rawContainer = document.getElementById('raw')
